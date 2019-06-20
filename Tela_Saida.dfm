@@ -5,7 +5,7 @@ object Tela_Saida: TTela_Saida
   BorderStyle = bsSingle
   Caption = 'Tela Saida'
   ClientHeight = 271
-  ClientWidth = 376
+  ClientWidth = 313
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -76,21 +76,22 @@ object Tela_Saida: TTela_Saida
   object txtPlacaSaida: TEdit
     Left = 72
     Top = 24
-    Width = 185
+    Width = 129
     Height = 32
     MaxLength = 8
     TabOrder = 0
   end
   object btnBuscar: TButton
-    Left = 278
+    Left = 207
     Top = 24
     Width = 90
     Height = 32
     Caption = 'Buscar'
     TabOrder = 1
+    OnClick = btnBuscarClick
   end
   object btnSalvar: TButton
-    Left = 263
+    Left = 185
     Top = 222
     Width = 105
     Height = 41

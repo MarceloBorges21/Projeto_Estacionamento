@@ -15,7 +15,10 @@ type
     txtVaga: TEdit;
     btnSalvarEntrada: TButton;
     lbHoraEntrada: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure btnSalvarEntradaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,6 +31,36 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TTela_Entrada.btnSalvarEntradaClick(Sender: TObject);
+var
+  nVagas: integer;
+begin
+    lbHoraEntrada.Visible := true;
+    lbHoraEntrada.Caption := TimeToStr(Time);
+    nVagas := StrToInt(txtVaga.Text);
+
+    if (txtPlacaEntrada.Text = '') then
+    begin
+      ShowMessage('Informe uma placa');
+      txtPlacaEntrada.SetFocus;
+      exit;
+    end;
+
+    if (txtVaga.Text = '') then
+    begin
+      ShowMessage('Informe uma vaga');
+      txtVaga.SetFocus;
+      exit;
+    end;
+
+    if (nVagas > 20) then
+    begin
+      ShowMessage('Até vaga 20');
+      txtVaga.SetFocus;
+      exit;
+    end;
+end;
 
 procedure TTela_Entrada.FormCreate(Sender: TObject);
 begin

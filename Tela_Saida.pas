@@ -20,6 +20,7 @@ type
     btnSalvar: TButton;
     Label2: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure btnBuscarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +33,20 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TTela_Saida.btnBuscarClick(Sender: TObject);
+begin
+    lbHoraSaida.Visible := true;
+    lbHoraSaida.Caption := TimeToStr(Time);
+
+     if (txtPlacaSaida.Text = '') then
+    begin
+      ShowMessage('Informe uma placa');
+      txtPlacaSaida.SetFocus;
+      exit;
+    end;
+
+end;
 
 procedure TTela_Saida.FormCreate(Sender: TObject);
 begin

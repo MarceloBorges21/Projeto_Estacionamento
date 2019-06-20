@@ -4,8 +4,8 @@ object Tela_Entrada: TTela_Entrada
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Tela Entrada'
-  ClientHeight = 274
-  ClientWidth = 352
+  ClientHeight = 233
+  ClientWidth = 316
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -44,6 +44,32 @@ object Tela_Entrada: TTela_Entrada
     Height = 24
     Visible = False
   end
+  object Label4: TLabel
+    Left = 84
+    Top = 54
+    Width = 81
+    Height = 17
+    Caption = 'Ex.: abc-1234'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 79
+    Top = 171
+    Width = 30
+    Height = 19
+    Caption = '1-20'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
   object txtPlacaEntrada: TEdit
     Left = 84
     Top = 21
@@ -55,17 +81,19 @@ object Tela_Entrada: TTela_Entrada
   object txtVaga: TEdit
     Left = 79
     Top = 133
-    Width = 121
+    Width = 58
     Height = 32
     MaxLength = 2
+    NumbersOnly = True
     TabOrder = 1
   end
   object btnSalvarEntrada: TButton
-    Left = 227
-    Top = 223
+    Left = 189
+    Top = 191
     Width = 107
     Height = 33
     Caption = 'Salvar'
     TabOrder = 2
+    OnClick = btnSalvarEntradaClick
   end
 end
