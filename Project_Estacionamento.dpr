@@ -1,0 +1,22 @@
+program Project_Estacionamento;
+
+uses
+  Vcl.Forms,
+  Tela_Principal in 'Tela_Principal.pas' {Tela_Principal1},
+  Tela_Entrada in 'Tela_Entrada.pas' {Tela_Entrada},
+  Tela_Estacionamento in 'Tela_Estacionamento.pas' {Unit_Tela_Estacionamento},
+  Tela_Saida in 'Tela_Saida.pas' {Tela_Saida},
+  Unit_Funcoes in 'Unit_Funcoes.pas',
+  Vcl.Themes,
+  Vcl.Styles,
+  Tella_Listar in 'Tella_Listar.pas' {Tela_Listar};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Windows10 Dark');
+  Application.CreateForm(TTela_Principal1, Tela_Principal1);
+  Application.Run;
+end.
