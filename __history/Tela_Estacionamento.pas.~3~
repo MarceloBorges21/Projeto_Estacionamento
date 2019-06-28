@@ -1,0 +1,72 @@
+unit Tela_Estacionamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls;
+
+type
+  TUnit_Tela_Estacionamento = class(TForm)
+    Image1: TImage;
+    Vaga1: TLabel;
+    Vaga2: TLabel;
+    Vaga3: TLabel;
+    Vaga4: TLabel;
+    Vaga5: TLabel;
+    Vaga6: TLabel;
+    Vaga7: TLabel;
+    Vaga8: TLabel;
+    Vaga9: TLabel;
+    Vaga10: TLabel;
+    Vaga11: TLabel;
+    Vaga12: TLabel;
+    Vaga13: TLabel;
+    Vaga14: TLabel;
+    Vaga15: TLabel;
+    Vaga16: TLabel;
+    Vaga17: TLabel;
+    Vaga18: TLabel;
+    Vaga19: TLabel;
+    Vaga20: TLabel;
+  private
+    { Private declarations }
+  public
+    procedure setCorVaga(vaga:integer);
+  end;
+
+var
+  telaEstacionamento: TUnit_Tela_Estacionamento;
+
+implementation
+
+{$R *.dfm}
+
+procedure TUnit_Tela_Estacionamento.setCorVaga(vaga: integer);
+begin
+ case vaga of
+ 1: Vaga1.Font.Color := clRed;
+ 2: Vaga2.Font.Color := clRed;
+ 3: Vaga3.Font.Color := clRed;
+ 4: Vaga4.Font.Color := clRed;
+ 5: Vaga5.Font.Color := clRed;
+ 6: Vaga6.Font.Color := clRed;
+ 7: Vaga7.Font.Color := clRed;
+ 8: Vaga8.Font.Color := clRed;
+ 9: Vaga9.Font.Color := clRed;
+ 10: Vaga10.Font.Color := clRed;
+ 11: Vaga11.Font.Color := clRed;
+ 12: Vaga12.Font.Color := clRed;
+ 13: Vaga13.Font.Color := clRed;
+ 14: Vaga14.Font.Color := clRed;
+ 15: Vaga15.Font.Color := clRed;
+ 16: Vaga16.Font.Color := clRed;
+ 17: Vaga17.Font.Color := clRed;
+ 18: Vaga18.Font.Color := clRed;
+ 19: Vaga19.Font.Color := clRed;
+ 20: Vaga20.Font.Color := clRed;
+ end;
+end;
+
+end.

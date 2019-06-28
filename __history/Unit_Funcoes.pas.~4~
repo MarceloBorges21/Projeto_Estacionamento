@@ -1,0 +1,47 @@
+unit Unit_Funcoes;
+
+interface
+
+   type TCarros = record
+    placa : string[8];
+    horaEntrada : string;
+    horaSaida : string;
+    vaga : integer;
+    vagaAberta : byte;
+end;
+  TEstacionamento = class
+  private
+    cont: integer;
+     carros:array[1..100] of TCarros;
+   public
+    constructor create;
+    procedure incCont;
+    function getCont:integer;
+
+
+end;
+  var
+
+     Estacionamento: TEstacionamento;
+implementation
+
+{ TEstacionamento }
+
+uses Tela_Estacionamento;
+
+constructor TEstacionamento.create;
+begin
+ cont :=0;
+end;
+
+function TEstacionamento.getCont: integer;
+begin
+   result := cont;
+end;
+
+procedure TEstacionamento.incCont;
+begin
+  inc(cont);
+end;
+
+end.

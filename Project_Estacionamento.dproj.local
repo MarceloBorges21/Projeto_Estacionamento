@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/06/19 20:08:39.000.727,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019/06/19 20:09:12.000.249,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Principal.dfm</Transaction>
-    <Transaction>2019/06/19 20:09:12.000.249,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Principal.pas</Transaction>
+    <Transaction>2019/06/19 20:09:12.000.249,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Principal.dfm=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019/06/19 20:09:12.000.249,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Principal.pas=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2019/06/19 20:09:26.000.142,=I:\Tela_Estacionamento.pas</Transaction>
     <Transaction>2019/06/19 20:09:46.000.975,=I:\neuri\HoraSaida.pas</Transaction>
     <Transaction>2019/06/19 20:09:58.000.807,=I:\Nova pasta (2)\Unit1_Tela_Entrada.pas</Transaction>
@@ -11,12 +11,12 @@
     <Transaction>2019/06/19 20:10:18.000.545,I:\Nova pasta (2)\Unit1_Tela_Entrada.pas=</Transaction>
     <Transaction>2019/06/19 20:10:20.000.126,I:\neuri\HoraSaida.pas=</Transaction>
     <Transaction>2019/06/19 20:12:13.000.961,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Entrada.pas</Transaction>
-    <Transaction>2019/06/19 20:12:14.000.102,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Saida.pas</Transaction>
     <Transaction>2019/06/19 20:12:14.000.113,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit_Funcoes.pas</Transaction>
     <Transaction>2019/06/19 20:12:14.000.025,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Estacionamento.pas</Transaction>
+    <Transaction>2019/06/19 20:12:14.000.102,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tela_Saida.pas</Transaction>
     <Transaction>2019/06/19 20:55:42.000.560,=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2019/06/19 20:58:57.000.157,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tella_Listar.pas</Transaction>
-    <Transaction>2019/06/19 20:58:57.000.157,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tella_Listar.dfm</Transaction>
-    <Transaction>2019/06/19 21:01:43.000.832,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Project_Estacionamento.dproj</Transaction>
+    <Transaction>2019/06/19 20:58:57.000.157,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tella_Listar.pas=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/06/19 20:58:57.000.157,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Tella_Listar.dfm=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2019/06/19 21:01:43.000.832,C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Project_Estacionamento.dproj=C:\Users\paulo\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>

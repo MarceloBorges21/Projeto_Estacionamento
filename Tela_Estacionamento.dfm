@@ -14,7 +14,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
   Font.Style = [fsBold]
   OldCreateOrder = False
   Visible = True
-  OnCreate = FormCreate
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 73
   object Image1: TImage

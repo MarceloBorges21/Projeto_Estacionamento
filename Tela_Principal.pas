@@ -32,32 +32,32 @@ implementation
 
 {$R *.dfm}
 
-uses Tela_Entrada, Tela_Estacionamento, Tela_Saida, Unit_Funcoes, Tella_Listar;
+uses Tela_Estacionamento, Tela_Saida, Unit_Funcoes, Tella_Listar, Tela_Entrada;
 
 procedure TTela_Principal1.mnEntradaClick(Sender: TObject);
 begin
      if not assigned(telaEntrada) then   telaEntrada := TTela_Entrada.Create(Self);
-     telaEntrada.Show;
+     telaEntrada.Show;      //Chama o form de tela de entrada
 end;
 
 
 procedure TTela_Principal1.mnEstacionamentoClick(Sender: TObject);
 begin
    if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
-    telaEstacionamento.Show;
+    telaEstacionamento.Show;        //Chama o form de tela de estacionamento
 end;
 
 
 procedure TTela_Principal1.mnListarClick(Sender: TObject);
 begin
    if not assigned(telaListar) then   telaListar := TTela_Listar.Create(Self);
-    telaListar.Show;
+    telaListar.Show;          //Chama o form de tela de lista
 end;
 
 procedure TTela_Principal1.mnSaidaClick(Sender: TObject);
 begin
     if not assigned(TelaSaida) then   TelaSaida := TTela_Saida.Create(Self);
-    TelaSaida.Show;
+    TelaSaida.Show;               //Chama o form de tela de saida
 end;
 
 end.

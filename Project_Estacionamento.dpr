@@ -17,5 +17,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TTela_Principal1, Tela_Principal1);
+  Estacionamento := TEstacionamento.create;
   Application.Run;
 end.

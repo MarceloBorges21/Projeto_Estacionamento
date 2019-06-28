@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls,Unit_Funcoes;
 
 type
   TTela_Entrada = class(TForm)
@@ -32,12 +32,18 @@ implementation
 
 {$R *.dfm}
 
+uses Tela_Estacionamento;
+
+
+
 procedure TTela_Entrada.btnSalvarEntradaClick(Sender: TObject);
 var
+  hora:Ttime;
   nVagas: integer;
 begin
     lbHoraEntrada.Visible := true;
     lbHoraEntrada.Caption := TimeToStr(Time);
+    hora := time;
     nVagas := StrToInt(txtVaga.Text);
 
     if (txtPlacaEntrada.Text = '') then
@@ -60,6 +66,15 @@ begin
       txtVaga.SetFocus;
       exit;
     end;
+
+   try
+   Estacionamento.inserirPlaca
+   (txtPlacaEntrada.Text, hora,hora , StrToInt(txtVaga.Text) , 1);
+   finally
+    if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
+    telaEstacionamento.Show;        //Chama o form de tela de estacionamento
+    end;
+
 end;
 
 procedure TTela_Entrada.FormCreate(Sender: TObject);

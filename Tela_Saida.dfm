@@ -81,21 +81,20 @@ object Tela_Saida: TTela_Saida
     MaxLength = 8
     TabOrder = 0
   end
-  object btnBuscar: TButton
-    Left = 207
-    Top = 24
-    Width = 90
-    Height = 32
-    Caption = 'Buscar'
-    TabOrder = 1
-    OnClick = btnBuscarClick
-  end
   object btnSalvar: TButton
     Left = 185
     Top = 222
     Width = 105
     Height = 41
     Caption = 'Salvar'
+    TabOrder = 1
+  end
+  object btnRegistrar: TButton
+    Left = 215
+    Top = 24
+    Width = 90
+    Height = 32
+    Caption = 'Registrar'
     TabOrder = 2
   end
 end
