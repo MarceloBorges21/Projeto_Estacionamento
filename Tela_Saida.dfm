@@ -4,11 +4,11 @@ object Tela_Saida: TTela_Saida
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Tela Saida'
-  ClientHeight = 271
-  ClientWidth = 313
+  ClientHeight = 235
+  ClientWidth = 287
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
-  Font.Color = clWindowText
+  Font.Color = clBlack
   Font.Height = -21
   Font.Name = 'Times New Roman'
   Font.Style = [fsBold]
@@ -37,9 +37,9 @@ object Tela_Saida: TTela_Saida
     Caption = 'Valor a Pagar:'
   end
   object lbValorPagar: TLabel
-    Left = 190
+    Left = 177
     Top = 171
-    Width = 106
+    Width = 5
     Height = 24
     Visible = False
   end
@@ -53,14 +53,14 @@ object Tela_Saida: TTela_Saida
   object lbHoraEntrada_formsaida: TLabel
     Left = 162
     Top = 75
-    Width = 126
+    Width = 5
     Height = 24
     Visible = False
   end
   object lbHoraSaida: TLabel
     Left = 144
     Top = 122
-    Width = 129
+    Width = 5
     Height = 24
     Visible = False
   end
@@ -72,20 +72,20 @@ object Tela_Saida: TTela_Saida
     Caption = 'R$'
   end
   object btnSalvar: TButton
-    Left = 185
-    Top = 222
-    Width = 105
-    Height = 41
-    Caption = 'Salvar'
+    Left = 198
+    Top = 24
+    Width = 74
+    Height = 32
+    Caption = 'Buscar'
     TabOrder = 1
     OnClick = btnSalvarClick
   end
   object btnRegistrar: TButton
-    Left = 198
-    Top = 24
-    Width = 90
+    Left = 197
+    Top = 200
+    Width = 75
     Height = 32
-    Caption = 'Registrar'
+    Caption = 'Salvar'
     TabOrder = 2
     OnClick = btnRegistrarClick
   end
@@ -98,5 +98,6 @@ object Tela_Saida: TTela_Saida
     MaxLength = 8
     TabOrder = 0
     Text = '   -    '
+    OnKeyPress = txtPlacaSaidaKeyPress
   end
 end

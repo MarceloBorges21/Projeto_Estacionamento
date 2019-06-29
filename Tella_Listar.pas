@@ -14,6 +14,7 @@ type
     Label2: TLabel;
 
     procedure FormActivate(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -79,5 +80,10 @@ begin
 end;
 
 
+
+procedure TTela_Listar.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  If Key = #27 Then Close; //ESC fecha form
+end;
 
 end.

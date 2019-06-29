@@ -12,9 +12,11 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
   Font.Height = -64
   Font.Name = 'Times New Roman'
   Font.Style = [fsBold]
+  KeyPreview = True
   OldCreateOrder = False
   Visible = True
   OnActivate = FormActivate
+  OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 73
   object Image1: TImage

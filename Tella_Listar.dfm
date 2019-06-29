@@ -4,27 +4,29 @@ object Tela_Listar: TTela_Listar
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Tela Listar'
-  ClientHeight = 363
-  ClientWidth = 518
+  ClientHeight = 349
+  ClientWidth = 479
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -21
   Font.Name = 'Tahoma'
   Font.Style = [fsBold]
+  KeyPreview = True
   OldCreateOrder = False
   OnActivate = FormActivate
+  OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 25
   object Label1: TLabel
-    Left = 40
+    Left = 48
     Top = 8
     Width = 139
     Height = 25
     Caption = 'Estacionados'
   end
   object Label2: TLabel
-    Left = 336
+    Left = 312
     Top = 8
     Width = 94
     Height = 25
@@ -32,7 +34,7 @@ object Tela_Listar: TTela_Listar
   end
   object mmListar: TMemo
     Left = 8
-    Top = 53
+    Top = 39
     Width = 225
     Height = 306
     Color = clNone
@@ -47,9 +49,9 @@ object Tela_Listar: TTela_Listar
     TabOrder = 0
   end
   object mmHistorico: TMemo
-    Left = 260
-    Top = 53
-    Width = 245
+    Left = 248
+    Top = 39
+    Width = 225
     Height = 306
     Color = clNone
     Font.Charset = DEFAULT_CHARSET

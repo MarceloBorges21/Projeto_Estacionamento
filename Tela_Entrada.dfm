@@ -4,16 +4,17 @@ object Tela_Entrada: TTela_Entrada
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Tela Entrada'
-  ClientHeight = 233
-  ClientWidth = 316
+  ClientHeight = 232
+  ClientWidth = 278
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -21
   Font.Name = 'Times New Roman'
   Font.Style = [fsBold]
+  KeyPreview = True
   OldCreateOrder = False
-  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 24
   object Label1: TLabel
@@ -80,8 +81,8 @@ object Tela_Entrada: TTela_Entrada
     TabOrder = 1
   end
   object btnSalvarEntrada: TButton
-    Left = 189
-    Top = 191
+    Left = 125
+    Top = 192
     Width = 107
     Height = 33
     Caption = 'Salvar'

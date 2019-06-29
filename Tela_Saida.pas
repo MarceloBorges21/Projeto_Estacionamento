@@ -23,6 +23,7 @@ type
     procedure btnRegistrarClick(Sender: TObject);
     function getRegistroPelaPlaca(aux: string):integer;
     procedure btnSalvarClick(Sender: TObject);
+    procedure txtPlacaSaidaKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -43,11 +44,16 @@ var
 begin
     for  i:= 1 to Estacionamento.getCont do
       begin
-        if (Estacionamento.carros[i].placa=aux) then
+        if (Estacionamento.carros[i].placa = aux) then
         begin
            result:=i;
         end;
       end;
+end;
+
+procedure TTela_Saida.txtPlacaSaidaKeyPress(Sender: TObject; var Key: Char);
+begin
+  If Key = #27 Then Close; //ESC fecha form
 end;
 
 procedure TTela_Saida.btnRegistrarClick(Sender: TObject);
@@ -57,7 +63,7 @@ tempototal:TTime;
 h,m,s,mili:word;
 begin
 
-     if (txtPlacaSaida.Text = '') then
+    if (txtPlacaSaida.TextHint = '') then
     begin
       ShowMessage('Informe uma placa');
       txtPlacaSaida.SetFocus;
@@ -74,6 +80,8 @@ begin
        lbHoraSaida.Caption := TimeToStr(Estacionamento.carros[i].HoraSaida);
        Estacionamento.carros[i].vagaaberta:=0;
      finally
+         txtPlacaSaida.Clear;
+         txtPlacaSaida.SetFocus;
          if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
           telaEstacionamento.Show;        //Chama o form de tela de estacionamento
      end;
@@ -85,10 +93,18 @@ i:integer;
 tempototal:TTime;
 h,m,s,mili:word;
 begin
+
+    if (txtPlacaSaida.TextHint = '') then
+    begin
+      ShowMessage('Informe uma placa');
+      txtPlacaSaida.SetFocus;
+      exit;
+    end ;
+
   i := getRegistroPelaPlaca(txtPlacaSaida.Text);
     lbHoraSaida.Visible := true;
     lbHoraEntrada_formsaida.Visible := true;
-    lbValoraPagar.Visible := true;
+    lbValorPagar.Visible := true;
     lbHoraEntrada_formsaida.Caption := TimeToStr(Estacionamento.carros[i].HoraEntrada);
     tempototal:= time - Estacionamento.carros[i].HoraEntrada;
     decodetime(tempototal,h,m,s,mili);
@@ -97,7 +113,7 @@ begin
     begin
       h:=h+1;
     end;
-    lbValorPagar.Caption:= '10' ;
+    lbValorPagar.Caption:= IntToStr(5+(h*2))+ ',00';
 end;
-          //5+(h*2)
+
 end.

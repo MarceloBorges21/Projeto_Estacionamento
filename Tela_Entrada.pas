@@ -18,8 +18,8 @@ type
     Label4: TLabel;
     Label5: TLabel;
     txtPlacaEntrada: TMaskEdit;
-    procedure FormCreate(Sender: TObject);
     procedure btnSalvarEntradaClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -35,19 +35,23 @@ implementation
 
 uses Tela_Estacionamento;
 
-
+procedure TTela_Entrada.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  If Key = #27 Then Close; //ESC fecha form
+end;
 
 procedure TTela_Entrada.btnSalvarEntradaClick(Sender: TObject);
 var
   hora:Ttime;
   i, nVagas: integer;
 begin
+
     lbHoraEntrada.Visible := true;
     lbHoraEntrada.Caption := TimeToStr(Time);
     hora := time;
     nVagas := StrToInt(txtVaga.Text);
 
-    if (txtPlacaEntrada.Text = '') then
+    if (txtPlacaEntrada.TextHint = '') then
     begin
       ShowMessage('Informe uma placa');
       txtPlacaEntrada.SetFocus;
@@ -68,35 +72,30 @@ begin
       exit;
     end;
 
-     if (txtVaga.Text > 20) then
-    begin
-      ShowMessage('Até vaga 20');
-      txtVaga.SetFocus;
-      exit;
-    end;
-
-    for i := 1 to estacionamento.getCont do
-    if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and(estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
-    begin
-      ShowMessage('Placa já Registrada');
-      txtVaga.SetFocus;
-      exit;
-    end;
+   for i := 1 to estacionamento.getCont do  //valida se a placa já esta estacionada
+      if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and
+         (estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
+      begin
+        ShowMessage('Placa já está no estacionamento');
+        txtVaga.SetFocus;
+        exit;
+      end;
 
    try
-   Estacionamento.inserirPlaca
-   (txtPlacaEntrada.Text, hora, StrToInt(txtVaga.Text) , 1);
+      Estacionamento.inserirPlaca
+      (txtPlacaEntrada.Text, hora, StrToInt(txtVaga.Text) , 1);
    finally
-    if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
-    telaEstacionamento.Show;        //Chama o form de tela de estacionamento
-    end;
+      txtPlacaEntrada.Clear;
+      txtVaga.Clear;
+      txtPlacaEntrada.SetFocus;
+      if not (assigned(telaEstacionamento)) then
+      begin
+              telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
+      telaEstacionamento.Show;    //Chama o form de tela de estacionamento
+      end;
+   end;
 
 end;
 
-procedure TTela_Entrada.FormCreate(Sender: TObject);
-begin
-    lbHoraEntrada.Visible := true;
-    lbHoraEntrada.Caption := TimeToStr(Time);
-end;
 
 end.
