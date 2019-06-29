@@ -70,14 +70,6 @@ object Tela_Entrada: TTela_Entrada
     Font.Style = []
     ParentFont = False
   end
-  object txtPlacaEntrada: TEdit
-    Left = 84
-    Top = 21
-    Width = 121
-    Height = 32
-    MaxLength = 8
-    TabOrder = 0
-  end
   object txtVaga: TEdit
     Left = 79
     Top = 133
@@ -95,5 +87,15 @@ object Tela_Entrada: TTela_Entrada
     Caption = 'Salvar'
     TabOrder = 2
     OnClick = btnSalvarEntradaClick
+  end
+  object txtPlacaEntrada: TMaskEdit
+    Left = 84
+    Top = 21
+    Width = 101
+    Height = 32
+    EditMask = 'LLL-0000;1;_'
+    MaxLength = 8
+    TabOrder = 0
+    Text = '   -    '
   end
 end

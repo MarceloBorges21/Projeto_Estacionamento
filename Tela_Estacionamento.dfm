@@ -8,7 +8,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
   ClientWidth = 1362
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
-  Font.Color = clLime
+  Font.Color = clGreen
   Font.Height = -64
   Font.Name = 'Times New Roman'
   Font.Style = [fsBold]
@@ -2067,7 +2067,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Caption = '9'
   end
   object Vaga10: TLabel
-    Left = 416
+    Left = 432
     Top = 639
     Width = 64
     Height = 73
@@ -2080,7 +2080,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '11'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2100,7 +2100,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '13'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2113,7 +2113,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '14'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2126,7 +2126,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '15'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2139,7 +2139,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '16'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2152,7 +2152,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '17'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2165,7 +2165,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '18'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2178,7 +2178,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '19'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
@@ -2191,7 +2191,7 @@ object Unit_Tela_Estacionamento: TUnit_Tela_Estacionamento
     Height = 73
     Caption = '20'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clLime
+    Font.Color = clGreen
     Font.Height = -64
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]

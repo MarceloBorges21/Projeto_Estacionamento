@@ -10,9 +10,6 @@ Coordinates=262,10,53,58
 [txtVaga]
 Coordinates=126,78,58,58
 
-[txtPlacaEntrada]
-Coordinates=10,78,106,58
-
 [lbHoraEntrada]
 Coordinates=194,78,97,58
 
@@ -27,5 +24,5 @@ Coordinates=10,10,53,58
 Coordinates=136,10,53,58
 
 []
-Coordinates=368,78,91,36
+Coordinates=10,78,106,58
 

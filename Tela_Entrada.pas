@@ -4,19 +4,20 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls,Unit_Funcoes;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls,Unit_Funcoes,
+  Vcl.Mask;
 
 type
   TTela_Entrada = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    txtPlacaEntrada: TEdit;
     txtVaga: TEdit;
     btnSalvarEntrada: TButton;
     lbHoraEntrada: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    txtPlacaEntrada: TMaskEdit;
     procedure FormCreate(Sender: TObject);
     procedure btnSalvarEntradaClick(Sender: TObject);
   private
@@ -39,7 +40,7 @@ uses Tela_Estacionamento;
 procedure TTela_Entrada.btnSalvarEntradaClick(Sender: TObject);
 var
   hora:Ttime;
-  nVagas: integer;
+  i, nVagas: integer;
 begin
     lbHoraEntrada.Visible := true;
     lbHoraEntrada.Caption := TimeToStr(Time);
@@ -67,9 +68,24 @@ begin
       exit;
     end;
 
+     if (txtVaga.Text > 20) then
+    begin
+      ShowMessage('Até vaga 20');
+      txtVaga.SetFocus;
+      exit;
+    end;
+
+    for i := 1 to estacionamento.getCont do
+    if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and(estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
+    begin
+      ShowMessage('Placa já Registrada');
+      txtVaga.SetFocus;
+      exit;
+    end;
+
    try
    Estacionamento.inserirPlaca
-   (txtPlacaEntrada.Text, hora,hora , StrToInt(txtVaga.Text) , 1);
+   (txtPlacaEntrada.Text, hora, StrToInt(txtVaga.Text) , 1);
    finally
     if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
     telaEstacionamento.Show;        //Chama o form de tela de estacionamento

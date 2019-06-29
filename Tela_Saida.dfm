@@ -13,7 +13,6 @@ object Tela_Saida: TTela_Saida
   Font.Name = 'Times New Roman'
   Font.Style = [fsBold]
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 24
   object Label1: TLabel
@@ -38,11 +37,10 @@ object Tela_Saida: TTela_Saida
     Caption = 'Valor a Pagar:'
   end
   object lbValorPagar: TLabel
-    Left = 185
+    Left = 190
     Top = 171
-    Width = 119
+    Width = 106
     Height = 24
-    Caption = 'lbValorPagar'
     Visible = False
   end
   object lbHoraEntrada: TLabel
@@ -55,31 +53,23 @@ object Tela_Saida: TTela_Saida
   object lbHoraEntrada_formsaida: TLabel
     Left = 162
     Top = 75
-    Width = 5
+    Width = 126
     Height = 24
     Visible = False
   end
   object lbHoraSaida: TLabel
     Left = 144
     Top = 122
-    Width = 5
+    Width = 129
     Height = 24
     Visible = False
   end
   object Label2: TLabel
-    Left = 153
+    Left = 145
     Top = 171
     Width = 26
     Height = 24
     Caption = 'R$'
-  end
-  object txtPlacaSaida: TEdit
-    Left = 72
-    Top = 24
-    Width = 129
-    Height = 32
-    MaxLength = 8
-    TabOrder = 0
   end
   object btnSalvar: TButton
     Left = 185
@@ -88,13 +78,25 @@ object Tela_Saida: TTela_Saida
     Height = 41
     Caption = 'Salvar'
     TabOrder = 1
+    OnClick = btnSalvarClick
   end
   object btnRegistrar: TButton
-    Left = 215
+    Left = 198
     Top = 24
     Width = 90
     Height = 32
     Caption = 'Registrar'
     TabOrder = 2
+    OnClick = btnRegistrarClick
+  end
+  object txtPlacaSaida: TMaskEdit
+    Left = 72
+    Top = 24
+    Width = 120
+    Height = 32
+    EditMask = 'LLL-0000;1'
+    MaxLength = 8
+    TabOrder = 0
+    Text = '   -    '
   end
 end

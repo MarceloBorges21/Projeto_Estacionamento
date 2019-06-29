@@ -1,0 +1,38 @@
+object Tela_Listar: TTela_Listar
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Tela Listar'
+  ClientHeight = 367
+  ClientWidth = 645
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object mmListar: TMemo
+    Left = 0
+    Top = 2
+    Width = 225
+    Height = 306
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+  end
+  object mmHistorico: TMemo
+    Left = 348
+    Top = 8
+    Width = 273
+    Height = 337
+    Lines.Strings = (
+      '')
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+end
