@@ -101,19 +101,25 @@ begin
       exit;
     end ;
 
-  i := getRegistroPelaPlaca(txtPlacaSaida.Text);
-    lbHoraSaida.Visible := true;
-    lbHoraEntrada_formsaida.Visible := true;
-    lbValorPagar.Visible := true;
-    lbHoraEntrada_formsaida.Caption := TimeToStr(Estacionamento.carros[i].HoraEntrada);
-    tempototal:= time - Estacionamento.carros[i].HoraEntrada;
-    decodetime(tempototal,h,m,s,mili);
-    lbHoraSaida.Caption := TimeToStr(Time);
-    if ((m)<>0) then
-    begin
-      h:=h+1;
+
+
+    try
+      i := getRegistroPelaPlaca(txtPlacaSaida.Text);
+      lbHoraSaida.Visible := true;
+      lbHoraEntrada_formsaida.Visible := true;
+      lbValorPagar.Visible := true;
+      lbHoraEntrada_formsaida.Caption := TimeToStr(Estacionamento.carros[i].HoraEntrada);
+      tempototal:= time - Estacionamento.carros[i].HoraEntrada;
+      decodetime(tempototal,h,m,s,mili);
+      lbHoraSaida.Caption := TimeToStr(Time);
+      if ((m)<>0) then
+      begin
+        h:=h+1;
+      end;
+      lbValorPagar.Caption:= IntToStr(5+(h*2))+ ',00';
+    except
+      ShowMessage('Placa não esta no estacionamento');;
     end;
-    lbValorPagar.Caption:= IntToStr(5+(h*2))+ ',00';
 end;
 
 end.

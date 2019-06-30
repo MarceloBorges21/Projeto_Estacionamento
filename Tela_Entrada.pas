@@ -72,14 +72,14 @@ begin
       exit;
     end;
 
-   for i := 1 to estacionamento.getCont do  //valida se a placa já esta estacionada
-      if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and
-         (estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
-      begin
-        ShowMessage('Placa já está no estacionamento');
-        txtVaga.SetFocus;
-        exit;
-      end;
+      for i := 1 to estacionamento.getCont do  //valida se a placa já esta estacionada
+        if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and
+           (estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
+        begin
+          ShowMessage('Placa já está no estacionamento');
+          txtVaga.SetFocus;
+          exit;
+        end;
 
    try
       Estacionamento.inserirPlaca
@@ -90,12 +90,10 @@ begin
       txtPlacaEntrada.SetFocus;
       if not (assigned(telaEstacionamento)) then
       begin
-              telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
-      telaEstacionamento.Show;    //Chama o form de tela de estacionamento
+         telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
+         telaEstacionamento.Show;    //Chama o form de tela de estacionamento
       end;
    end;
 
 end;
-
-
 end.
