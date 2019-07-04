@@ -40,7 +40,6 @@ begin
     mmListar.Clear;
     for i := 1 to Estacionamento.getCont do
   begin
-
     if ( TimeToStr(Estacionamento.carros[i].HoraSaida) <> '00:00:00' ) then
     begin
       mmHistorico.Lines.Add('placa: '+estacionamento.carros[i].placa);
@@ -49,19 +48,16 @@ begin
       tempototal:= estacionamento.carros[i].HoraSaida - Estacionamento.carros[i].HoraEntrada;
       decodetime(tempototal,h,m,s,mili);
       if ((m)<>0) then
-        begin
-         h:=h+1;
-        end;
+      begin
+        h:=h+1;
+      end;
       mmHistorico.Lines.Add('Saída: '+timetostr(estacionamento.carros[i].HoraSaida));
       mmHistorico.Lines.Add('Valor Pago: '+inttostr(5+(h*2)));
       mmHistorico.Lines.Add('-------------------------');
     end;
-
-
   end;
    for i := 1 to Estacionamento.getCont do
   begin
-
     if ( TimeToStr(Estacionamento.carros[i].HoraSaida) = '00:00:00' ) then
     begin
       mmListar.Lines.Add('placa: '+ estacionamento.carros[i].placa);
@@ -75,13 +71,8 @@ begin
         end;
         mmListar.Lines.Add('-------------------------');
     end;
-
-
-
   end;
 end;
-
-
 
 procedure TTela_Listar.FormKeyPress(Sender: TObject; var Key: Char);
 begin

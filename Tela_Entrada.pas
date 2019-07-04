@@ -45,11 +45,9 @@ var
   hora:Ttime;
   i, nVagas: integer;
 begin
-
     lbHoraEntrada.Visible := true;
     lbHoraEntrada.Caption := TimeToStr(Time);
     hora := time;
-
 
     if (txtPlacaEntrada.Text = '   -    ') then
     begin
@@ -102,6 +100,5 @@ begin
          telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
          telaEstacionamento.Show;    //Chama o form de tela de estacionamento
    end;
-
 end;
 end.

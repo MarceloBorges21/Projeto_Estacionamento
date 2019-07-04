@@ -63,7 +63,6 @@ tempototal:TTime;
 h,m,s,mili:word;
 erro:bool;
 begin
-
     if (txtPlacaSaida.Text = '   -    ') then
     begin
       ShowMessage('Informe uma placa');
@@ -106,7 +105,6 @@ i:integer;
 tempototal:TTime;
 h,m,s,mili:word;
 begin
-
     if (txtPlacaSaida.Text = '   -    ') then
     begin
       ShowMessage('Informe uma placa');
@@ -132,5 +130,4 @@ begin
       ShowMessage('Placa não esta no estacionamento');
     end;
 end;
-
 end.
