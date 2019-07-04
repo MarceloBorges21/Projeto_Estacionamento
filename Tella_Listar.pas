@@ -45,6 +45,7 @@ begin
     begin
       mmHistorico.Lines.Add('placa: '+estacionamento.carros[i].placa);
       mmHistorico.Lines.Add('Entrada: '+timetostr(estacionamento.carros[i].HoraEntrada));
+
       tempototal:= estacionamento.carros[i].HoraSaida - Estacionamento.carros[i].HoraEntrada;
       decodetime(tempototal,h,m,s,mili);
       if ((m)<>0) then
@@ -63,8 +64,9 @@ begin
 
     if ( TimeToStr(Estacionamento.carros[i].HoraSaida) = '00:00:00' ) then
     begin
-      mmListar.Lines.Add('placa: '+estacionamento.carros[i].placa);
-      mmListar.Lines.Add('Entrada: '+timetostr(estacionamento.carros[i].HoraEntrada));
+      mmListar.Lines.Add('placa: '+ estacionamento.carros[i].placa);
+      mmListar.Lines.Add('Entrada: '+ timetostr(estacionamento.carros[i].HoraEntrada));
+      mmListar.Lines.Add('Vaga: ' + IntToStr(estacionamento.carros[i].vaga));
       tempototal:= estacionamento.carros[i].HoraSaida - Estacionamento.carros[i].HoraEntrada;
       decodetime(tempototal,h,m,s,mili);
       if ((m)<>0) then

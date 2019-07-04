@@ -61,15 +61,16 @@ var
 i:integer;
 tempototal:TTime;
 h,m,s,mili:word;
+erro:bool;
 begin
 
-    if (txtPlacaSaida.TextHint = '') then
+    if (txtPlacaSaida.Text = '   -    ') then
     begin
       ShowMessage('Informe uma placa');
       txtPlacaSaida.SetFocus;
       exit;
     end;
-
+    try
      try
       i := getRegistroPelaPlaca(txtPlacaSaida.Text);
        lbHoraSaida.Visible := true;
@@ -79,12 +80,24 @@ begin
        Estacionamento.carros[i].HoraSaida:=Time;
        lbHoraSaida.Caption := TimeToStr(Estacionamento.carros[i].HoraSaida);
        Estacionamento.carros[i].vagaaberta:=0;
-     finally
-         txtPlacaSaida.Clear;
-         txtPlacaSaida.SetFocus;
-         if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
-          telaEstacionamento.Show;        //Chama o form de tela de estacionamento
+       erro:= false;
+     except
+      erro:= true;
+      exit;
      end;
+     finally
+        if erro then
+        begin
+          ShowMessage('Placa não esta no estacionamento');
+        end
+        else
+        begin
+          txtPlacaSaida.Clear;
+          txtPlacaSaida.SetFocus;
+          if not assigned(telaEstacionamento) then   telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
+            telaEstacionamento.Show;        //Chama o form de tela de estacionamento
+        end;
+    end;
 end;
 
 procedure TTela_Saida.btnSalvarClick(Sender: TObject);
@@ -94,14 +107,12 @@ tempototal:TTime;
 h,m,s,mili:word;
 begin
 
-    if (txtPlacaSaida.TextHint = '') then
+    if (txtPlacaSaida.Text = '   -    ') then
     begin
       ShowMessage('Informe uma placa');
       txtPlacaSaida.SetFocus;
       exit;
     end ;
-
-
 
     try
       i := getRegistroPelaPlaca(txtPlacaSaida.Text);
@@ -118,7 +129,7 @@ begin
       end;
       lbValorPagar.Caption:= IntToStr(5+(h*2))+ ',00';
     except
-      ShowMessage('Placa não esta no estacionamento');;
+      ShowMessage('Placa não esta no estacionamento');
     end;
 end;
 

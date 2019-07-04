@@ -49,22 +49,23 @@ begin
     lbHoraEntrada.Visible := true;
     lbHoraEntrada.Caption := TimeToStr(Time);
     hora := time;
-    nVagas := StrToInt(txtVaga.Text);
 
-    if (txtPlacaEntrada.TextHint = '') then
+
+    if (txtPlacaEntrada.Text = '   -    ') then
     begin
       ShowMessage('Informe uma placa');
       txtPlacaEntrada.SetFocus;
       exit;
     end;
 
-    if (txtVaga.Text = '') then
+    if (txtVaga.Text =('')) then
     begin
       ShowMessage('Informe uma vaga');
       txtVaga.SetFocus;
       exit;
     end;
 
+    nVagas := StrToInt(txtVaga.Text);
     if (nVagas > 20) then
     begin
       ShowMessage('Até vaga 20');
@@ -72,11 +73,20 @@ begin
       exit;
     end;
 
-      for i := 1 to estacionamento.getCont do  //valida se a placa já esta estacionada
-        if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and
+    for i := 1 to estacionamento.getCont do  //valida se a placa já esta estacionada
+      if (estacionamento.carros[i].placa=txtPlacaEntrada.Text)and
+         (estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
+      begin
+        ShowMessage('Placa já está no estacionamento');
+        txtVaga.SetFocus;
+        exit;
+      end;
+
+    for i := 1 to estacionamento.getCont do  //valida se Vaga já está ocupada
+        if (estacionamento.carros[i].vaga=StrToInt(txtVaga.Text))and
            (estacionamento.carros[i].horaSaida=strtotime('00:00:00')) then
         begin
-          ShowMessage('Placa já está no estacionamento');
+          ShowMessage('Vaga já está ocupada');
           txtVaga.SetFocus;
           exit;
         end;
@@ -88,11 +98,9 @@ begin
       txtPlacaEntrada.Clear;
       txtVaga.Clear;
       txtPlacaEntrada.SetFocus;
-      if not (assigned(telaEstacionamento)) then
-      begin
+      if not assigned(telaEstacionamento) then
          telaEstacionamento := TUnit_Tela_Estacionamento.Create(Self);
          telaEstacionamento.Show;    //Chama o form de tela de estacionamento
-      end;
    end;
 
 end;
